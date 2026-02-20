@@ -1,19 +1,35 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 export default function Hero() {
+    const lettersRef = useRef<HTMLSpanElement[]>([]);
+    useEffect(() => {
+  gsap.from(lettersRef.current, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.05,
+    ease: "power3.out"
+  });
+}, []);
   return (
     <section className="relative h-screen bg-neutral-100 overflow-hidden flex flex-col justify-center items-center">
 
       {/* Headline */}
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-center z-10 flex flex-wrap justify-center gap-4">
   {"WELCOMEITZFIZZ".split("").map((letter, index) => (
-    <span
-      key={index}
-      className="inline-block tracking-[0.4em]"
-    >
-      {letter}
-    </span>
-  ))}
+  <span
+    key={index}
+    ref={(el) => {
+      if (el) lettersRef.current[index] = el;
+    }}
+    className="inline-block tracking-[0.4em]"
+  >
+    {letter}
+  </span>
+))}
 </h1>
 
       {/* Placeholder for stats */}
