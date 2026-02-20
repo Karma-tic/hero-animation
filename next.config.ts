@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: "/scroll-hero-animation",
+  assetPrefix: "/scroll-hero-animation/",
 };
 
 export default nextConfig;
