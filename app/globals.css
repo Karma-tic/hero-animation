@@ -1,90 +1,108 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: sans-serif;
-  background: #000;
+body {
+  background: black;
+  font-family: Arial, sans-serif;
+  color: white;
   overflow-x: hidden;
 }
 
-/* SECTION */
 .section {
-  height: 220vh;
-  background: #000;
+  height: 260vh;
   position: relative;
+  background: black;
 }
 
-/* TRACK */
 .track {
   position: sticky;
   top: 0;
   height: 100vh;
-  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ROAD */
 .road {
-  width: 100vw;
-  height: 220px;
-  background: #1e1e1e;
   position: relative;
+  width: 100vw;
+  height: 200px;
+  background: #111;
   overflow: hidden;
 }
 
-/* TRAIL */
 .trail {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(to right, #facc15, #fb923c);
+  background: linear-gradient(to right, #facc15, #f97316);
   width: 0;
+  z-index: 1;
 }
 
-/* CAR */
 .car {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 10;
+  z-index: 5;
 }
 
-/* LETTERS */
 .letters {
   position: absolute;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  display: flex;
-  gap: 12px;
   font-size: 60px;
   font-weight: bold;
-  color: white;
-  z-index: 5;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
 }
 
 .letters span {
   opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-/* BOXES */
+/* Floating Boxes */
+
 .stat-box {
   position: absolute;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px 35px;
+  border-radius: 16px;
+  font-weight: bold;
   opacity: 0;
-  transform: translateY(40px);
 }
 
-.box1 { top: 8%; left: 10%; background: #84cc16; color: black; }
-.box2 { bottom: 10%; left: 20%; background: #38bdf8; color: black; }
-.box3 { top: 15%; right: 15%; background: #333; color: white; }
-.box4 { bottom: 12%; right: 12%; background: #f97316; color: black; }
+.box1 {
+  top: 10%;
+  left: 15%;
+  background: #9be000;
+  color: black;
+}
+
+.box2 {
+  top: 45%;
+  left: 25%;
+  background: #3fb4e5;
+  color: black;
+}
+
+.box3 {
+  top: 70%;
+  right: 20%;
+  background: #333;
+  color: white;
+}
+
+.box4 {
+  top: 90%;
+  left: 40%;
+  background: orange;
+  color: black;
+}
